@@ -4,57 +4,25 @@ class APIHandler {
   }
 
   getFullList() {
-    axios
-      .get(`this.BASE_URL/characters`)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return axios.get(`${this.BASE_URL}/characters`);
   }
 
   getOneRegister(characterId) {
-    axios
-      .get(`this.BASE_URL/characters/${characterId}`)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return axios.get(`${this.BASE_URL}/characters/${characterId}`);
   }
 
   createOneRegister(characterInfo) {
-    axios
-      .post(`this.BASE_URL/characters`, characterInfo)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return axios.post(`${this.BASE_URL}/characters`, characterInfo);
   }
 
   updateOneRegister(characterId, characterInfo) {
-    axios
-      .patch(`this.BASE_URL/characters/${characterId}`, characterInfo)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return axios.patch(
+      `${this.BASE_URL}/characters/${characterId}`,
+      characterInfo
+    );
   }
 
   deleteOneRegister(characterId) {
-    axios
-      .delete(`this.BASE_URL/characters/${characterId}`)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return axios.delete(`${this.BASE_URL}/characters/${characterId}`);
   }
 }
